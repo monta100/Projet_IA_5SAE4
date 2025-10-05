@@ -24,7 +24,11 @@ public class User {
     private String email;
     private String motDePasse;
     @Enumerated(EnumType.STRING)   // Sauvegarde la valeur sous forme de texte ("ADHERENT", "COACH", "ADMIN")
-    private Role role;/*
+    private Role role;
+
+    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
+    private List<Repas> repas;
+    /*
     // Un utilisateur peut avoir plusieurs objectifs
     @OneToMany(mappedBy = "utilisateur", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Objectif> objectifs;

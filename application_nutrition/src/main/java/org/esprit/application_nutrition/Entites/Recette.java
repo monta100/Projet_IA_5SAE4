@@ -1,5 +1,6 @@
 package org.esprit.application_nutrition.Entites;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
@@ -21,6 +22,7 @@ public class Recette implements Serializable {
 
     @ManyToOne
     @JoinColumn(name="repas_id")
+    @JsonBackReference
     private Repas repas;
 
     @OneToMany(mappedBy = "recette", cascade = CascadeType.ALL, orphanRemoval = true)

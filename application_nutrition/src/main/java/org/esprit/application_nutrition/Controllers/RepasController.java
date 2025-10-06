@@ -38,7 +38,6 @@ public class RepasController {
         if (existingRepas == null) {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
-        repasDetails.setId(id);
         Repas updatedRepas = repasService.updateRepas(repasDetails);
         return new ResponseEntity<>(updatedRepas, HttpStatus.OK);
     }

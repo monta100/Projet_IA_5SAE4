@@ -9,7 +9,7 @@ pipeline {
 
     options {
         // Timeout counter starts after agent is allocated
-        timeout(time: 1, unit: 'SECONDS')
+        timeout(time: 2, unit: 'MINUTES')
     }
 
     environment {
@@ -20,9 +20,8 @@ pipeline {
 
         stage('Code Checkout') {
             steps {
-                git branch: 'master',
-                    url: 'https://github.com/hwafa/atelier-jenkins.git',
-                    credentialsId: 'jenkins-example-github-pat'
+                git branch: 'Gestion_Recette',
+                    url: 'https://github.com/monta100/Projet_IA_5SAE4.git',
             }
         }
 

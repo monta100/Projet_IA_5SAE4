@@ -21,7 +21,7 @@ pipeline {
         stage('Code Checkout') {
             steps {
                 git branch: 'Gestion_Recette',
-                    url: 'https://github.com/monta100/Projet_IA_5SAE4.git',
+                    url: 'https://github.com/monta100/Projet_IA_5SAE4.git'
             }
         }
 

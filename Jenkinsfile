@@ -1,14 +1,12 @@
 pipeline {
     agent any
-    // Si tu veux utiliser un node spécifique, remplace par :
-    // agent { label 'build' }
 
     tools {
         maven 'M2-HOME'
     }
 
     options {
-        // Timeout counter starts after agent is allocated
+        skipDefaultCheckout(true)   // évite le checkout auto de Jenkins
         timeout(time: 2, unit: 'MINUTES')
     }
 

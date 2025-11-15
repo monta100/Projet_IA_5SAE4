@@ -6,7 +6,6 @@ pipeline {
     }
 
     options {
-        skipDefaultCheckout(true)   // évite le checkout auto de Jenkins
         timeout(time: 2, unit: 'MINUTES')
     }
 
@@ -25,7 +24,9 @@ pipeline {
 
         stage('Code Build') {
             steps {
-                sh 'mvn install -Dmaven.test.skip=true'
+                dir('application_nutrition') {   // <-- Très important
+                    sh 'mvn install -Dmaven.test.skip=true'
+                }
             }
         }
     }

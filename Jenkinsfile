@@ -4,7 +4,7 @@ pipeline {
     // agent { label 'build' }
 
     tools {
-        maven 'M2_HOME'
+        maven 'M2-HOME'
     }
 
     options {
